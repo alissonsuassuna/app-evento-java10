@@ -1,5 +1,6 @@
 import { useState } from 'react';
-const Form = () => {
+
+const PostEvento = ({ onEventCreated }) => {
 
     const [eventName, setEventName] = useState("");
     const [eventDescription, setEventDescription] = useState("");
@@ -10,7 +11,7 @@ const Form = () => {
     const [eventImage, setEventImage] = useState("");
     const [eventType, setEventType] = useState("WORKSHOP");
 
-    const handleSubmit = async (event) =>{
+   const handleSubmit = async (event) =>{
         event.preventDefault()
         
         const eventDate = {
@@ -25,9 +26,6 @@ const Form = () => {
             tipo: eventType.toUpperCase(),
 
         }
-
-        console.log(eventDate)
-
         try {
             
             const response = await fetch('http://localhost:8080/api/v1/eventos/criarevento', {
@@ -43,16 +41,17 @@ const Form = () => {
             }
 
             alert('Evento cadastrado com sucesso')
+
+            onEventCreated() // Atualizado dados
+
         } catch (error) {
             console.error('Erro ao cadastrar', error)
         }
     }
 
-
- 
     return (
         <>
-            <h1>Formulario</h1>
+             <h1>Formulario</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input
@@ -136,6 +135,5 @@ const Form = () => {
         </>
     )
 }
-    
-   
-export default Form
+
+export default PostEvento
