@@ -3,6 +3,7 @@ import PostEvento from './components/PostEvento'
 
 import './App.css'
 import GetEvento from './components/GetEvento'
+import GetNome from './components/GetNome'
 
 function App() {
     const [eventos, setEventos] = useState([])
@@ -25,9 +26,26 @@ function App() {
       }
     }
 
+  
+
     useEffect( () => {
       buscarTodosOsDados()
   }, [] )
+
+  const buscarEventoPorNome = async (nomeEvento) => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/v1/eventos/nome/${nomeEvento}`)
+        if(!response.ok) {
+          throw new Error('Erro ao buscar os dados')
+        }
+
+        const evento = await response.json()
+        setEventos([evento])
+    } catch (error) {
+      console.error('Error', error.message)
+      setEventos([])
+    }
+  }
 
   const handleEventoCreated = () => {
     buscarTodosOsDados()
@@ -38,8 +56,9 @@ function App() {
 
   return (
     <>
+      <GetNome onBuscar={buscarEventoPorNome}/>
       <div className='container'>
-        <div class="events-list">
+        <div className="events-list">
           <div class="event">
             <img src="/img/gato-preto.png" alt="Evento"/>
             <div>
