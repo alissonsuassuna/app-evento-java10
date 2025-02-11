@@ -3,7 +3,7 @@ const GetEvento = ({ eventos }) => {
     return (
         <>
 
-            <ul className="space-y-3">
+            <ul className='events-list'>
                 {eventos.map((evento) => (
                 <li key={evento.id}>
                     <h2>{evento.nome}</h2>

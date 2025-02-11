@@ -38,11 +38,44 @@ function App() {
 
   return (
     <>
-     <h1>java10x</h1>
-  
-     <PostEvento onEventCreated={handleEventoCreated} />
-     <GetEvento eventos={eventos} />
+      <div className='container'>
+        <div class="events-list">
+          <div class="event">
+            <img src="/img/gato-preto.png" alt="Evento"/>
+            <div>
+              <h4>Nome do evento</h4>
+              <span>15/02/2025 - 18:00 - 23:00</span>
+              <p>Blumenau, Santa Catarina</p>
+            </div>
+            
+          </div>
+          <div class="event">
+            <img src="/img/gato-preto.png" alt="Evento"/>
+            <div>
+              <h4>Nome do evento</h4>
+              <span>15/02/2025 - 18:00 - 23:00</span>
+              <p>Blumenau, Santa Catarina</p>
+            </div>
+          </div>
+          <div class="event">
+            <img src="/img/gato-preto.png" alt="Evento"/>
+            <div>
+              <h4>Nome do evento</h4>
+              <span>15/02/2025 - 18:00 - 23:00</span>
+              <p>Blumenau, Santa Catarina</p>
+            </div>
+          </div>
+        </div>
+        <PostEvento onEventCreated={handleEventoCreated} />
+      </div>
+
+      <GetEvento eventos={eventos} />
+
+      <footer>
+        <p>&copy; 2025 Todos os direitos reservados - Eventos<b>Online</b></p>
+      </footer>
     </>
+  
   )
 }
 

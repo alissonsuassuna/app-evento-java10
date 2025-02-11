@@ -51,87 +51,88 @@ const PostEvento = ({ onEventCreated }) => {
 
     return (
         <>
-             <h1>Formulario</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <input
-                        type="text"
-                        placeholder="Nome do Evento"
-                        value={eventName}
-                        onChange={(e) => setEventName(e.target.value)}
-                        required
-                    />
-                </div>
+            <div className='form-section'>
+                <form onSubmit={handleSubmit} className="form-post">
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            placeholder="Nome do Evento"
+                            value={eventName}
+                            onChange={(e) => setEventName(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                <div>
-                    <input
-                        type="text"
-                        placeholder="Descrição"
-                        value={eventDescription}
-                        onChange={(e) => setEventDescription(e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            placeholder="Descrição"
+                            value={eventDescription}
+                            onChange={(e) => setEventDescription(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                <div>
-                    <input
-                        type="text"
-                        placeholder="Local do Evento"
-                        value={eventLocation}
-                        onChange={(e) => setEventLocation(e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            placeholder="Local do Evento"
+                            value={eventLocation}
+                            onChange={(e) => setEventLocation(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                <div>
-                    <input
-                        type="number"
-                        placeholder="Capacidade"
-                        value={eventCapacity}
-                        onChange={(e) => setEventCapacity(e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="input-group">
+                        <input
+                            type="number"
+                            placeholder="Capacidade"
+                            value={eventCapacity}
+                            onChange={(e) => setEventCapacity(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                <div>
-                    <input
-                        type="datetime-local"
-                        placeholder="Data de Início"
-                        value={eventStart}
-                        onChange={(e) => setEventStart(e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="input-group">
+                        <input
+                            type="datetime-local"
+                            placeholder="Data de Início"
+                            value={eventStart}
+                            onChange={(e) => setEventStart(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                <div>
-                    <input
-                        type="datetime-local"
-                        placeholder="Data de Fim"
-                        value={eventEnd}
-                        onChange={(e) => setEventEnd(e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="input-group">
+                        <input
+                            type="datetime-local"
+                            placeholder="Data de Fim"
+                            value={eventEnd}
+                            onChange={(e) => setEventEnd(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                <div>
-                    <input
-                        type="text"
-                        placeholder="Imagem URL"
-                        value={eventImage}
-                        onChange={(e) => setEventImage(e.target.value)}
-                    />
-                </div>
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            placeholder="Imagem URL"
+                            value={eventImage}
+                            onChange={(e) => setEventImage(e.target.value)}
+                        />
+                    </div>
 
-                <div>
-                    <select value={eventType} onChange={(e) => setEventType(e.target.value)}>
-                        <option value="WORKSHOP">Workshop</option>
-                        <option value="SEMINARIO">Seminário</option>
-                        <option value="CONFERENCIA">Conferência</option>
-                    </select>
-                </div>
+                    <div className="input-group">
+                        <select value={eventType} onChange={(e) => setEventType(e.target.value)}>
+                            <option value="WORKSHOP">Workshop</option>
+                            <option value="SEMINARIO">Seminário</option>
+                            <option value="CONFERENCIA">Conferência</option>
+                        </select>
+                    </div>
 
-                <button type="submit">Cadastrar Evento</button>
-            </form>
+                    <button type="submit">Cadastrar Evento</button>
+                </form>
+            </div>
         </>
     )
 }
